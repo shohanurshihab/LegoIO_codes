@@ -13,7 +13,7 @@ import random
 typing_speed = 0.5
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
-url = "https://ns26njj87sh.dataflightit.com/rw/"
+url = "https://www.resumenalyzer.com/rw/"
 
 browser = driver.maximize_window()
 # customize browser screen
@@ -35,8 +35,8 @@ time.sleep(2)
 #names
 first_names = ('John','Andy','Joe')
 last_names = ('Johnson','Smith','Williams')
-emails = ('john@gmail.com','andy@gmail.com','joe@gmail.com')
-passwords = ('john12345','andy67890','joe01925')
+emails = ('devile741@gmail.com')
+passwords = ('GgAPnN6FkQzePma')
 #First name
 name1 = driver.find_element(By.XPATH,'//*[@id="id_first_name"]')
 name1.click()
@@ -54,14 +54,14 @@ time.sleep(2)
 #Email
 email = driver.find_element(By.XPATH,'//*[@id="id_email"]')
 email.click()
-email = random.choice(emails)
+email = emails
 print(email)
 email_input = action.send_keys(email).perform()
 time.sleep(2)
 #Password
 password = driver.find_element(By.XPATH,'//*[@id="id_password1"]')
 password.click()
-password = random.choice(passwords)
+password = passwords
 print(password)
 passwords_input = action.send_keys(password).perform()
 time.sleep(2)

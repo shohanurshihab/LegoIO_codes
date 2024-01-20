@@ -8,7 +8,7 @@ from selenium.common.exceptions import WebDriverException
 driver = webdriver.Chrome()
 
 # Read main_url from a text file
-with open("main_urls.txt", "r") as file:
+with open("main_urls copy.txt", "r") as file:
     main_urls = file.readlines()
 
 # Function to visit a link and capture clicked element text
@@ -66,7 +66,7 @@ with open("consolidated_output.txt", "w") as f:
                 visited_links.add(main_link_url)
                 link_info.append((main_link_text, main_link_url))
             elif result == "not_found":
-                page_not_found_links.append((main_link_text, main_link_url))
+                page_not_found_links.add((main_link_text, main_link_url))
 
         # Write to the consolidated output file
         f.write(f"Main URL: {main_url}\n")

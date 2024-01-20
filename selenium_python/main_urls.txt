@@ -1,8 +1,3 @@
-http://www.nidw.gov.bd/
-https://bangladesh.gov.bd/
-http://mail.epb.gov.bd/
-https://www.sec.gov.bd/
-http://beza.gov.bd/
 http://www.bscic.gov.bd/
 http://www.bhtpa.gov.bd/
 http://www.brtc.gov.bd/

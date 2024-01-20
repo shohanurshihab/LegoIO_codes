@@ -21,6 +21,10 @@ def visit_link(link_url, clicked_element_text):
 
         if "403" in page_title:
             return "not_found"
+        elif "404" in page_title:
+            return "not_found"
+        elif "400" in page_title:
+            return "not_found"
         else:
             return "visited"
 
@@ -46,7 +50,7 @@ with open("consolidated_output.txt", "w") as f:
 
             # Collect the URLs and text of all the links on the main page
             main_link_info = set((link.get_attribute('href'), link.text) for link in main_link_elements if link.get_attribute('href') and "#" not in link.get_attribute('href'))
-
+            print(len(main_link_info))
             # Initialize sets to track visited and couldn't visit links for each main_url
             visited_links = set()
             page_not_found_links = []
@@ -63,10 +67,11 @@ with open("consolidated_output.txt", "w") as f:
                     link_info.append((main_link_text, main_link_url))
                 elif result == "not_found":
                     page_not_found_links.append((main_link_text, main_link_url))
-
+            print(visited_links)
             # Write to the consolidated output file
             f.write(f"Main URL: {main_url}\n\n")
             f.write(f"Visited Links ({len(visited_links)}):\n")
+            f.write(visited_links)
             # for text, url in link_info:
             #     f.write(f"{url}\n")
 
